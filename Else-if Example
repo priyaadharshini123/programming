@@ -1,0 +1,73 @@
+Given mark of student, Print the Grade
+
+Grade A if mark is greater than or equal to 90
+
+Grade B if mark is greater than or equal to 80
+
+Grade C if mark if greater than or equal to 60
+
+Grade D if mark if greaer than or equal to 35
+
+Fail if mark is lesser than 35
+
+
+Input: 95
+
+Expected Output:
+
+Grade A
+
+Explanation: Here 95 is greater than or equal to 90 so its Grade A
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+#include<iostream>  // to use predefined function
+using namespace std;  // to perform standard input and output operations
+int main(){
+    int marks; //declaration of variable called marks
+    cin>>marks; // getting user input.
+    if(marks>=90){ // checking condition
+        cout<<"Grade A"<<endl; // executes when the condition satisified.
+    }
+    else if(marks>=80){     // Execute when the above condition  is not satisified.
+        cout<<"Grade B"<<endl;    // executes when the condition satisified.
+    }
+    else if(marks>=60){          // Execute when the above  condition is not satisified.
+        cout<<"Grade C"<<endl;   // executes when the condition satisified.
+    }
+    else if(marks>=35){           // Execute when the above condition  is not satisified.
+        cout<<"Grade D"<<endl;    // executes when the condition satisified.
+    }
+    else{                         // Execute when the above condition  is not satisified.
+        cout<<"Fail";            // executes when the condition satisified.
+    }
+    return 0;
+}
+
+
+1. Input:
+98
+Output:
+Grade A.
+-----------------------------------------------------------------------------------------------------------------------------
+2.Input:
+85
+output:
+Grade B.
+-----------------------------------------------------------------------------------------------------------------------------
+3.Input:
+75
+Output:
+Grade C.
+-----------------------------------------------------------------------------------------------------------------------------
+4.Input:
+45
+Output:
+Grade D.
+-----------------------------------------------------------------------------------------------------------------------------
+5.Input.
+20
+output:
+Fail.
+-----------------------------------------------------------------------------------------------------------------------------.
+
+
