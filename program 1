@@ -1,0 +1,61 @@
+Prob 1 : Write a program that takes an integer, then a string, then a char from the user and prints them in the screen.
+
+
+Input:  2 Name y
+
+Expected Output:
+
+2
+
+Name
+
+y
+
+
+The program is and logic:
+
+#include<iostream> // header files for standard operations
+using namespace std; // contains packages for cout and cin
+int main(){
+int a;
+string b;
+char c;
+cin>>a>>b>>c;
+cout<<a<<endl<<b<<endl<<c;
+return 0;
+}
+The input  are:
+2
+name
+y
+The output are:
+2
+name
+y
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+// But consider a scenario since the datatype is string it may take a line also as input but if we are using cin to get it it doesn't work correctly  it print the words that are before the first occurence of 
+space to get a line as input we need to use getline let's see how to use it.
+#include<iostream>
+using namespace std;
+int main(){
+int a;
+string b;
+char c;
+cin>>a;
+cin.ignore();// thie leaves the white spaces after the input so that only b gets stored in the correct spaces else  in the remaining places only b will stored.
+getline(b,cin);
+cin>>c;
+cout<<a<<endl<<b<<endl<<c;
+return 0;
+}
+
+Input:
+2
+Name: Priya
+j
+Output:
+2
+Name: Priya
+j.
+
