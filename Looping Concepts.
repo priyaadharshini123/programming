@@ -1,0 +1,56 @@
+ Prob 1:
+
+Write a program which takes two values x and y. Prints x for y number of times.
+
+Input:
+
+2 
+
+3
+
+Expected Output
+
+2
+
+2
+
+2
+
+Explanation - 2 is x and 3 is y in the input. So 2 is printed 3 times on the output.
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+#include <iostream>    // include the strandard packages and functions.
+using namespace std;    // to include the cout and cin certificate.
+
+
+int main()
+{
+    int x,y;        // declaration  two input variables.
+    cin>>x>>y;      //gets the user input
+    for(int i=1;i<=y;i++){  // for loop initializes with 1 and executes as long as the condition is true 
+        cout<<x<<endl;      //print the x for y times.
+    }
+
+    return 0;
+}
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+1.Input:
+2 3
+Output:
+2
+2
+2
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2.Input:
+5 6
+Output:
+5
+5
+5
+5
+5
+5.
+
