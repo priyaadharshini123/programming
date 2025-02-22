@@ -1,0 +1,58 @@
+Write a program to get firstName and lastName and n as input and print fullName that is firstName+lastName for n times.
+
+Input
+
+Nandy
+
+Raja
+
+5
+
+Expected output:
+
+NandyRaja
+
+NandyRaja
+
+NandyRaja
+
+NandyRaja
+
+NandyRaja
+
+Explanation - Nandy is the firstName, Raja is the lastName and n is 5, so the expected output has NandyRaja printed 5 times.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+#include <iostream>                  //to include predefined package.
+#include<string>                     //to include string function and use the string type.
+using namespace std;                  // to include the cin and cout type.
+
+int main() {
+    string firstname;                  //declaration of firstname variable
+    string lastname;                   //declaration of lastname variable
+    int n;                              //declaration of n that is number of time to be printed
+    getline(cin,firstname);               // since the name may conatin spaces we use getline to accept the full name
+    getline(cin,lastname);                 // since the name may conatin spaces we use getline to accept the full name
+    cin>>n;                                 //number of times need to be printed.
+    for(int i=1;i<=n;i++){                  //use loop to print until the condition is satisfied upto i lessthan n it will print firstname+lastname as output.
+        cout<<firstname+lastname<<endl;     //output the result.
+    }
+
+    return 0;
+}
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+   Input.
+Priyadharshini
+Mani
+5
+  Output:
+PriyadharshiniMani
+PriyadharshiniMani
+PriyadharshiniMani
+PriyadharshiniMani
+PriyadharshiniMani
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
