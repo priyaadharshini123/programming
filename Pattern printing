@@ -1,0 +1,67 @@
+Write a Program which takes input n and prints the below pattern and upload the code to your github repo.
+
+
+
+Sample 1:
+
+Input:
+
+n = 4
+
+Expected output:
+
+****
+
+***
+
+**
+
+*
+
+
+
+Sample 2
+
+Input:
+
+n= 6
+
+******
+
+*****
+
+****
+
+***
+
+**
+
+*
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#include <iostream>   // to include the predefined functions.
+using namespace std;  // to use strandard input and output
+
+int main()
+{
+    
+    int n;   //declaration of variable
+    cin>>n;  // getting user input
+    for(int i=1;i<=n;i++){  //outer loop 
+        for(int j=1;j<=n-i+1;j++){ //inner loop
+            cout<<"*";  //print pattern
+            
+            
+        }
+        cout<<endl;
+    }
+
+    return 0;
+}
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Input 5
+output:
+*****
+****
+***
+**
+*.
