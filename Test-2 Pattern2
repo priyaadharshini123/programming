@@ -1,0 +1,70 @@
+Rex loves diamonds and today he wants diamonds to be printed using code. He will give you a number n and you should print a diamond for him as below based on n.
+
+Input Format
+
+n = 5
+
+Constraints
+
+1<=n<=1000
+
+Output Format
+
+    *    
+   ***   
+  *****  
+ ******* 
+*********
+*********
+ ******* 
+  *****  
+   ***   
+    *
+Sample Input 0
+
+3
+Sample Output 0
+
+  *
+ ***
+*****
+*****
+ ***
+  *
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    int n;
+    cin >> n;
+
+    
+    for (int i = 1; i <= n; i++) {
+        for (int j = 1; j <= n - i; j++) {
+            cout << " ";
+        }
+        for (int j = 1; j <= 2 * i - 1; j++) {
+            cout << "*";
+        }
+        cout << endl;
+    }
+
+   
+    for (int i = n; i >= 1; i--) {
+        for (int j = 1; j <= n - i; j++) {
+            cout << " ";
+        }
+        for (int j = 1; j <= 2 * i - 1; j++) {
+            cout << "*";
+        }
+        cout << endl;
+    }
+
+    return 0;
+}
