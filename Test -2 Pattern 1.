@@ -1,0 +1,55 @@
+eena is fond of patterns, but she needs your help to solve the below pattern. Given n as input, teena wants you to print the below pattern.
+
+Input Format
+
+n = 5
+
+Constraints
+
+1<=n<=100
+
+Output Format
+
+12345
+678910
+1112131415
+1617181920
+2122232425
+Sample Input 0
+
+3
+Sample Output 0
+
+123
+456
+789
+Sample Input 1
+
+2
+Sample Output 1
+
+12
+34
+--------------------------------------------------------------------------------------------------------------------------------------------------
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
+    int n;
+    cin>>n;
+    int count=1;
+    for(int i=1;i<=n;i++){
+        for(int j=1;j<=n;j++){
+            cout<<count;
+            count++;
+        }
+        cout<<endl;
+    }
+    return 0;
+}
