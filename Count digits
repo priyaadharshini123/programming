@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    //std::cout<<"Hello World";
+    int n;
+    cin>>n;
+    int ld;
+    int count=0;
+    while(n>0){
+       ld=n%10;
+       
+      n=n/10;
+      count++;
+    }
+    cout<<count;
+    
+    return 0;
+}
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Input:
+35478
+Output:
+5.
