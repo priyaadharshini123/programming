@@ -1,0 +1,18 @@
+#include<iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cin>>n;
+    while(n>0){
+        int ld=n%10;
+        cout<<ld;
+        n=n/10;
+    }
+    return 0;
+}
+---------------------------------------------------
+Input:
+4589
+Output:
+9854
