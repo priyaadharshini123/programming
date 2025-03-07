@@ -1,0 +1,20 @@
+Given a number N.Find the sum of fifth powers of natural numbers till N i.e. 1^5+2^5+3^5+..+N^5.
+
+
+class Solution {
+  public:
+    long long sumOfFifthPowers(long long N) {
+        // code here
+        long long sum=0;
+        for(long long i=1;i<=N;i++){
+            sum=sum+(i*i*i*i*i);
+        }
+        return sum;
+    }
+    
+};
+-----------------------------------------------------------------------
+Input:
+N=2
+Output:
+33.
