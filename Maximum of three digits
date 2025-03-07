@@ -1,0 +1,24 @@
+Given three distinct numbers a, b and c. Find the number with a value in the middle (Try to do it with minimum comparisons).
+  int middle(int a, int b, int c) {
+        // code here
+        if(a>b && a<c|| a<b && a>c){
+             return a;
+        }
+        else if(b>a && b<c || b<a && b>c){
+            return b;
+        }
+        else {
+            return c;
+        }
+    }
+};
+int main(){
+int m,n,x;
+cin>>m>>n>>x;
+cout<<middle(m,n,x);
+return 0;
+}
+-----------------------------------------------------------------------------------------------------------
+
+Input: a = 978, b = 518, c = 300
+Output: 518
