@@ -1,0 +1,17 @@
+swap the values a=10,b=20;
+#include <iostream>
+using namespace std;
+int main(){
+    int a,b;
+    int temp;
+    cin>>a>>b;
+    temp=a;
+    int temp1;
+    temp1=b;
+    b=temp;
+    a=temp1;;
+    cout<<a<<" "<<b;
+}
+--------------------------------------------------------------------------------------
+Input a=43,b=34
+Output a=34,b=43.
