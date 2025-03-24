@@ -1,0 +1,27 @@
+Vector is same as array but the oly difference is that it allows dynamic memory allocation and major disadvantage of array the size  should be known at the intialization is overcomed here.
+
+In veector how it allocates memory dyammically is :
+let's say first we inserted two elements 3,4 it will insert  them into vector next if we insert third element at that it creates new memory block whose size is twice the current memory block size  in the first it sizze is 2 means while inserting third elemnt it will create memory block 
+4 size or capacity  this is how vector allocates memory.
+
+// To initialize vector
+
+include the header file.
+then
+vector<int> v;
+<> it describes what dataype it is going to store and after <> braces it describes the name of the vector
+
+// To iterate the vector
+for(int i=0;i<v.size();i++){
+cout<<v.at(i);
+}
+
+// To insert element in the vecor
+
+v.push_back(2);
+// To pop element 
+v.pop_back();
+
+//To swap
+v.swap(v1);
+//This is small gist of vector.
