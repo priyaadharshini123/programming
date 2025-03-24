@@ -1,0 +1,13 @@
+Deque is exatly same as vecot with only difference that it allow to add and delete elements at front which is not possible in vector 
+
+//To initialize
+ deque<int> de;
+de.push_front(2);
+de.push_front(4);
+de.pop_back();
+for(auto i:de){
+cout<<i<<" ";
+}
+//It will print
+2
+Every other thing remains same as vecor.
