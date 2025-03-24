@@ -1,0 +1,17 @@
+Algorithms are set  f instruction we write to execute  to achieve our task.
+It has several predefined methods which simplifies our work.
+1. Max function
+cout<<max(8,9);
+2.Min function
+cout<<min(5,4);
+3. sort function
+sort(arr,arr+n);
+//This will sort the array.
+4. reverse(arr,arr+n)
+//This will reverse the array elements.
+5.*lower_bound(arr,arr+n,4)
+This will return the address of first occurence of the element if that element not exist then it will return the before  lowest element  address.
+6.*upper_bound(arr,arr+n,5)
+This will return the address of last occurence of the element if that element not exist then it will return the next highest element address.
+7.cout<<count(arr,arr+n,6)
+This will return the count of element in the array.
