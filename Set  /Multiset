@@ -1,0 +1,17 @@
+The major advantage of set is 
+1. Duplicates are not allowed in set
+2. It contain elements only in sorted order.
+
+//To initialize 
+set<int> s;
+s.insert(2);
+s.insert(3);
+s.erase(2);
+
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
+Another type is called Multiset
+
+It is exactly smme as multi set
+the only difference is t allows duplicate element and all the elements are also present in sorted order.
