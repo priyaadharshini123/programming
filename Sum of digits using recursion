@@ -1,0 +1,39 @@
+Write a recursive program to find the sum of digits of a number.
+
+Example:
+
+Input: 342
+
+Output: 9
+
+
+
+Example 2:
+Input: 34534
+
+Ouput: 19
+
+
+
+#include <iostream>
+using namespace std;
+
+int countdigits(int n){
+    if(n==0){
+        return 0;
+    }
+    
+    int digit=n%10;
+    return digit+countdigits(n/10);
+    
+}
+int main()
+{
+    //std::cout<<"Hello World";
+    int m;
+    cin>>m;
+    
+    cout<<countdigits(m);
+
+    return 0;
+}
