@@ -1,0 +1,20 @@
+#include <iostream>
+using namespace std;
+void printnumber(int n,int i)
+    if(n==0){
+        return;
+    }
+    cout<<i<<" ";
+    return printnumber(n,i-1);
+}
+int main()
+{
+    int n;
+    
+    printnumber(5);
+
+    return 0;
+}
+
+Input 5
+output 1 2 3 4 5.
