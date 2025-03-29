@@ -1,0 +1,35 @@
+Write a program to print the divisors of a number recursively.
+
+Example:
+Input: 6
+
+Output: 1 2 3 6
+
+
+
+Example:
+
+Input: 12
+
+Output: 1 2 3 4 6 12
+
+#include <iostream>
+using namespace std;
+void findfactors(int n,int i=1){
+    //int i=1;
+    if(i>n){
+        return ;
+    }
+    if(n%i==0){
+       cout<<i<<" ";
+    }
+    return findfactors(n,i+1);
+}
+int main()
+{
+    int n;
+    
+    findfactors(6);
+
+    return 0;
+}
