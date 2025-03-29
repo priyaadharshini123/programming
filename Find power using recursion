@@ -1,0 +1,33 @@
+Write a Program to find the power of a number recursively. Take two inputs, number and the power.
+
+Example:
+Input: 2 3
+
+Output: 8
+
+Explanation : 2^3 is 8
+
+Example:
+
+Input: 5 2
+
+Output: 25
+
+Explanation: 5^2 is 25
+
+#include <iostream>
+using namespace std;
+int findpower(int a,int b){
+    if(b==0){
+        return 1;
+    }
+    return a*findpower(a,b-1);
+}
+int main()
+{
+    int a,b;
+    
+    cout<<findpower(3,3);
+
+    return 0;
+}
