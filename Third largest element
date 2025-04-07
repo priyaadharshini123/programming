@@ -1,0 +1,53 @@
+
+
+#include <iostream>
+using namespace std;
+
+
+int main()
+{
+    int n;
+    cin>>n;
+    int arr[n];
+    for(int i=0;i<n;i++){
+        cin>>arr[i];
+    }
+   
+
+int first=0;
+     for(int i=0;i<n;i++){
+         if(arr[i]>arr[first]){
+             first=i;
+         }
+     }
+     int second=-1;
+     for(int i=0;i<n;i++){
+         if(second!=-1){
+             if(arr[i]>=arr[second] && i!=first){
+             second=i;
+             }
+         }else{
+             if(i!=first){
+                 second=i;
+             }
+         }
+         
+     }
+     int third=-1;
+     for(int i=0;i<n;i++){
+         if(third!=-1){
+             if(arr[i]>=arr[third] && i!=first && i!=second){
+             third=i;
+            }
+         }else{
+             if(i!=first && i!=second){
+                 third = i;
+             }
+         }
+         
+     }
+     
+     cout<< arr[third];
+
+    return 0;
+}
