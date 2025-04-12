@@ -1,0 +1,64 @@
+Given a string s of lowercase alphabets. The task is to find the maximum occurring character in the string s.
+
+Input Format
+
+s = "geeksforgeeks"
+
+Constraints
+
+0<=n<=100
+
+Output Format
+
+e
+
+Explanation - e has occurred 4 times in the string which is the maximum, so e is the string which has maximum occurence.
+
+Sample Input 0
+
+geeksforgeeks
+Sample Output 0
+
+e
+Sample Input 1
+
+s
+Sample Output 1
+
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include<string>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
+    string s;
+    cin >> s;
+
+    int freq[26] = {0};
+
+    // Count frequency of each character
+    for (char ch : s) {
+        freq[ch - 'a']++;
+    }
+
+    int maxFreq = 0;
+    char maxChar=s[0];
+
+    // Find the character with the highest frequency
+    for (int i = 0; i < 26; ++i) {
+        if (freq[i] > maxFreq) {
+            maxFreq = freq[i];
+            maxChar = 'a' + i;
+        }
+    }
+
+    cout << maxChar << endl;
+
+    return 0;
+}
+    
