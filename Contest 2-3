@@ -1,0 +1,62 @@
+Given a string s consisting of lowercase English Letters. Return the first non-repeating character in s. If there is no non-repeating character, return '-1'.
+
+Input Format
+
+S = "geeskgs"
+
+Constraints
+
+0<=n<=100
+
+Output Format
+
+k
+
+Explanation: k is the first character in the string which is not repeated
+
+Sample Input 0
+
+gkk
+Sample Output 0
+
+g
+Sample Input 1
+
+gghhsskk
+Sample Output 1
+
+-1
+
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+     string s;
+    cin >> s;
+
+    int freq[26] = {0};
+
+    // Count frequency of each character
+    for (char ch : s) {
+        freq[ch - 'a']++;
+    }
+
+    // Find the first non-repeating character
+    for (char ch : s) {
+        if (freq[ch - 'a'] == 1) {
+            cout << ch << endl;
+            return 0;
+        }
+    }
+
+    // If no non-repeating character found
+    cout << -1 << endl;
+
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
+    return 0;
+}
