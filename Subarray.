@@ -1,0 +1,74 @@
+Given an array of integers, arr[]. Find if there is a subarray (of size at least one) with 0 sum. Return true/false depending upon whether there is a subarray present with 0-sum or not. Input: arr[] = [4, 2, -3, 1, 6] Output: true Explanation: 2, -3, 1 is the subarray with a sum of 0.
+
+Input Format
+
+n=5 arr[] = [4, 2, -3, 1, 6]
+
+Constraints
+
+1 <= arr.size <= 1000
+
+Output Format
+
+true
+
+Sample Input 0
+
+5
+4 2 -3 1 6
+Sample Output 0
+
+true
+Sample Input 1
+
+5
+3 4 5 1 3
+Sample Output 1
+
+false
+
+
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include<unordered_set>
+using namespace std;
+bool hasZeroSumSubarray(vector<int>& arr) {
+    unordered_set<int> prefixSums;
+    int sum = 0;
+
+    for (int num : arr) {
+        sum += num;
+
+        // Check if prefix sum is zero or already exists
+        if (sum == 0 || prefixSums.count(sum)) {
+            return true;
+        }
+
+        prefixSums.insert(sum);
+    }
+
+    return false;
+}
+
+
+
+int main() {
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
+    int n;
+    cin >> n;
+    vector<int> arr(n);
+
+    for (int i = 0; i < n; ++i)
+        cin >> arr[i];
+
+    if (hasZeroSumSubarray(arr))
+        cout << "true" << endl;
+    else
+        cout << "false" << endl;
+
+    
+    return 0;
+}
