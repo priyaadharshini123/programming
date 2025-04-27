@@ -1,0 +1,57 @@
+Given a Binary Search Tree and a range [low,high]. Find all the numbers in the BST that lie in the given range.
+
+Important Note:
+
+Hackerrank seems to have some technical challenges to include driver code, so use the below code to generate the tree before proceeding with the coding logic.
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+struct Node{
+    int data;
+    Node* left;
+    Node* right;
+    Node(int d){
+        data = d;
+        left = NULL;
+        right = NULL;
+    }
+};
+
+void printNearNodes(Node *root, int low, int high) {
+        //Write your code here   
+}
+
+Node* insert(Node* root, int data) {
+        if(root == NULL){
+            return new Node(data);
+        }
+     else{
+            Node* cur;
+            if(data <= root->data) {
+                cur = insert(root->left, data);
+                root->left = cur;
+            }
+            else {
+                cur = insert(root->right, data);
+                root->right = cur;
+            }
+        return root;
+     }
+}
+
+int main() {
+    Node* root = NULL;
+    int t,l,r;
+    cin>>t;
+    while(t--){
+        int data;
+        cin>>data;
+        root = insert(root,data);   
+    }
+    cin>>l>>r;
+    printNearNodes(root,l,r);
+    return 0;
+}
