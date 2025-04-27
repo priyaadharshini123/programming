@@ -1,0 +1,69 @@
+Given a Binary Tree of size N and an integer K. Print all nodes that are at distance k from root (root is considered at distance 0 from itself). Nodes should be printed from left to right. If k is more that height of tree, nothing should be printed.
+
+Important Note:
+
+Hackerrank seems to have some technical challenges to include driver code, so use the below code to generate the tree before proceeding with the coding logic.
+
+
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+struct Node
+{
+    int data;
+    Node* left, * right;
+};
+
+
+void Kdistance(Node *root, int k, int level)
+{
+   //Write your code here
+
+}
+
+Node* newNode(int data)
+{
+    Node* node = (Node*)malloc(sizeof(Node));
+    node->data = data;
+    node->left = node->right = NULL;
+    return (node);
+}
+
+Node* insert(int arr[], Node* root,
+                       int i, int n)
+{
+   
+    if (i < n)
+    {
+        Node* temp = newNode(arr[i]);
+        root = temp;
+ 
+       
+        root->left = insert(arr,
+                   root->left, 2 * i + 1, n);
+ 
+        
+        root->right = insert(arr,
+                  root->right, 2 * i + 2, n);
+    }
+    return root;
+}
+
+int main() {
+    int n,k;
+    cin>>n;
+    int arr[n];
+    Node* root = NULL;
+    for(int i=0;i<n;i++){
+      cin>>arr[i];
+    }
+    cin>>k;
+    int h = sizeof(arr)/sizeof(arr[0]);
+    root = insert(arr, root, 0, h);
+    Kdistance(root, k, 0);
+    return 0;
+}
