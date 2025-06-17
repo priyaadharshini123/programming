@@ -1,0 +1,32 @@
+Given an array of integers arr[]. Find the Inversion Count in the array.
+Two elements arr[i] and arr[j] form an inversion if arr[i] > arr[j] and i < j.
+
+Inversion Count: For an array, inversion count indicates how far (or close) the array is from being sorted. If the array is already sorted then the inversion count is 0.
+If an array is sorted in the reverse order then the inversion count is the maximum. 
+
+
+#include <iostream>
+//#include<vector>
+using namespace std;
+
+int main()
+{
+    //std::cout<<"Hello World";
+    int n;
+    cin>>n;
+    int arr[n]; for(int i=0;i<n;i++){
+        cin>>arr[i];
+    }
+    int count=0;
+    for(int i=0;i<n;i++){
+        for(int j=i+1;j<n;j++){
+            if(arr[i]>arr[j]){
+                count++;
+            }
+        }
+    }
+    cout<<count;
+    
+
+    return 0;
+}
