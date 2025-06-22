@@ -1,0 +1,63 @@
+A valid IP address consists of exactly four integers separated by single dots. Each integer is between 0 and 255 (inclusive) and cannot have leading zeros.
+
+For example, "0.1.2.201" and "192.168.1.1" are valid IP addresses, but "0.011.255.245", "192.168.1.312" and "192.168@1.1" are invalid IP addresses. Given a string s containing only digits, return all possible valid IP addresses that can be formed by inserting dots into s. You are not allowed to reorder or remove any digits in s.
+
+Input Format
+
+s = "25525511135"
+
+Constraints
+
+1 <= s.length <= 20
+
+Output Format
+
+"255.255.11.135" "255.255.111.35"
+
+
+
+#include <iostream>
+#include <vector>
+#include <string>
+using namespace std;
+
+bool isValid(const string& s) {
+    if (s.empty() || (s.size() > 1 && s[0] == '0')) return false;
+    if (s.size() > 3) return false;
+    int num = stoi(s);
+    return num >= 0 && num <= 255;
+}
+
+void backtrack(const string& s, int start, int dots, string current, vector<string>& result) {
+    if (dots == 3) {
+        string last = s.substr(start);
+        if (isValid(last)) {
+            result.push_back(current + last);
+        }
+        return;
+    }
+
+    for (int len = 1; len <= 3; ++len) {
+        if (start + len >= s.length()) break;
+        string part = s.substr(start, len);
+        if (isValid(part)) {
+            backtrack(s, start + len, dots + 1, current + part + ".", result);
+        }
+    }
+}
+
+int main() {
+    string s;
+    cin >> s;
+
+    vector<string> result;
+    if (s.length() >= 4 && s.length() <= 12) {
+        backtrack(s, 0, 0, "", result);
+    }
+
+    for (const string& ip : result) {
+        cout << ip << " ";
+    }
+
+    return 0;
+}
