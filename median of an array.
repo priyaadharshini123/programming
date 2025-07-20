@@ -1,0 +1,102 @@
+Given an array arr[] of integers, calculate the median.
+
+Examples:
+
+Input: arr[] = [90, 100, 78, 89, 67]
+Output: 89
+Explanation: After sorting the array middle element is the median 
+Input: arr[] = [56, 67, 30, 79]
+Output: 61.5
+Explanation: In case of even number of elements, average of two middle elements is the median. 
+Input: arr[] = [1, 2]
+Output: 1.5
+Explanation: The average of both elements will result in 1.5.
+
+
+class Solution {
+  public:
+    double findMedian(vector<int> &arr) {
+        // code here.
+        int n=arr.size();
+        sort(arr.begin(),arr.end());
+        int count=0;
+        if(n%2!=0){
+        for(int i=0;i<n;i++){
+            if(n%2!=0){
+                count=n/2;
+                
+            }
+        }
+        int ans=count;
+        
+        return arr[ans];
+        }
+        else{
+        
+        int med=0;
+        for(int i=0;i<n;i++){
+            if(n%2==0){
+                med=n/2;
+            }
+        }
+        int sum=arr[med]+arr[med-1];
+        float ans1=0;
+        ans1=sum/2.0;
+        return ans1;
+        }
+    }
+};---------------------------------------------------------------------------------------------------------------------
+/******************************************************************************
+
+                              Online C++ Compiler.
+               Code, Compile, Run and Debug C++ program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <iostream>
+#include<vector>
+#include<algorithm>
+using namespace std;
+
+int main()
+{
+    int n;
+    cin>>n;
+    vector<int>num;
+    
+    for(int i=0;i<n;i++){
+        int val;
+        cin>>val;
+        num.push_back(val);
+    }
+    int count=0;
+    sort(num.begin(),num.end());
+    for(int i=0;i<n;i++){
+        cout<<num[i]<<" ";
+    }
+    cout<<endl;
+    for(int i=0;i<n;i++){
+        if(n%2!=0){
+            count=n/2;
+            
+        }
+    }
+    cout<<num[count];
+    cout<<endl;
+    int med=0;
+    for(int i=0;i<n;i++){
+        if(n%2==0){
+            med=n/2;
+            
+        }
+    }
+    int sum=0;
+    sum=num[med]+num[med-1];
+    float ans=sum/2.0;
+    cout<<ans<<endl;
+    
+    
+
+    return 0;
+}
