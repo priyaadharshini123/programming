@@ -1,0 +1,160 @@
+Given two sorted arrays nums1 and nums2 of size m and n respectively, return the median of the two sorted arrays.
+
+The overall run time complexity should be O(log (m+n)).
+
+ 
+
+Example 1:
+
+Input: nums1 = [1,3], nums2 = [2]
+Output: 2.00000
+Explanation: merged array = [1,2,3] and median is 2.
+Example 2:
+
+Input: nums1 = [1,2], nums2 = [3,4]
+Output: 2.50000
+Explanation: merged array = [1,2,3,4] and median is (2 + 3) / 2 = 2.5.
+ 
+
+Constraints:
+
+nums1.length == m
+nums2.length == n
+0 <= m <= 1000
+0 <= n <= 1000
+1 <= m + n <= 2000
+-106 <= nums1[i], nums2[i] <= 106
+
+
+
+/******************************************************************************
+
+                              Online C++ Compiler.
+               Code, Compile, Run and Debug C++ program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <iostream>
+#include<vector>
+#include<algorithm>
+#include<iomanip>
+using namespace std;
+
+int main()
+{
+    int n;
+    int m;
+    cin>>n;
+    cin>>m;
+    vector<int>first;
+    vector<int>second;
+    
+    for(int i=0;i<n;i++){
+        int val;
+        cin>>val;
+        first.push_back(val);
+    }
+    for(int i=0;i<m;i++){
+        int val1;
+        cin>>val1;
+        second.push_back(val1);
+    }
+   
+    vector<int>merged(n+m);
+    
+    for(int k=0;k<n;k++){
+        merged[k]=first[k];
+    }
+    for(int j=0;j<m;j++){
+        merged[n+j]=second[j];
+    }
+    sort(merged.begin(),merged.end());
+    for(int i=0;i<n+m;i++){
+        cout<<merged[i]<<" ";
+    }
+    cout<<endl;
+    int count=0;
+    int total=n+m;
+    float ans=0;
+    float ans1=0;
+    float ans2=0;
+    if(total%2!=0){
+    for(int i=0;i<total;i++){
+        if(total%2!=0){
+            count=total/2;
+        }
+        
+        
+    }
+     ans=count;
+     cout<<fixed <<setprecision(5)<<merged[ans]<<".00000"<<endl;
+}
+else{
+    for(int i=0;i<total;i++){
+        if(total%2==0){
+            ans1=total/2;
+            
+        }
+    }
+    ans2=merged[ans1]+merged[ans1-1];
+    float ans3=ans2/2.0;
+    cout<<fixed<<setprecision(5)<<ans3<<endl;
+    
+}
+    
+    
+    
+
+    return 0;
+}
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+
+
+class Solution {
+public:
+    double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2) {
+        int n=nums1.size();
+        int m=nums2.size();
+        int total=n+m;
+        vector<int>merged(n+m);
+        for(int k=0;k<n;k++){
+            merged[k]=nums1[k];
+
+        }
+        for(int j=0;j<m;j++){
+            merged[n+j]=nums2[j];
+        }
+        sort(merged.begin(),merged.end());
+        int count=0;
+        int ans=0;
+        float ans1=0;
+        float ans2=0;
+        float ans3=0;
+
+        if(total%2!=0){
+            for(int i=0;i<total;i++){
+                if(total%2!=0){
+                    count=total/2;
+                }
+            }
+            ans=merged[count];
+            return ans;
+
+        }
+        else{
+            for(int i=0;i<total;i++){
+                if(total%2==0){
+                    ans1=total/2;
+                }
+            }
+            ans2=merged[ans1]+merged[ans1-1];
+            ans3=ans2/2.0;
+            return ans3;
+        }
+        
+        
+    }
+};
