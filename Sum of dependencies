@@ -1,0 +1,63 @@
+Given a directed graph with V nodes and E edges. If there is an edge from u to v then u depends on v. Find out the sum of dependencies for every node. Duplicate edges should be counted as separate edges.
+
+Input Format
+
+M=3 N=3
+
+U V
+
+0 3
+
+0 2
+
+0 1
+
+EXPLANATION -> 0 depends on 1,2,3....1 depends on none, 2 depends on none, 3 depends on none....So 3+0+0+0 = 3
+
+Constraints
+
+NIL
+
+Output Format
+
+3
+
+Sample Input 0
+
+3 3
+0 3
+0 2
+0 1
+Sample Output 0
+
+3
+
+
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int sumOfDependencies(vector<int> adj[], int V) {
+  //Write your code here
+    int total=0;
+    for(int i=0;i<V;i++){
+        total+=adj[i].size();
+    }
+    return total;
+}
+
+int main() {
+   int N, M, u, v;
+   cin >> N >> M;
+   vector<int> mat[N];
+   for (int i = 0; i < M; i++) {
+       cin >> u >> v;
+       mat[u].push_back(v);
+   }
+  
+   cout << sumOfDependencies(mat, N) << "\n";
+   return 0;
+}
