@@ -1,0 +1,79 @@
+Given a square grid of size N, each cell of which contains an integer cost that represents a cost to traverse through that cell, we need to find a path from the top left cell to the bottom right cell by which the total cost incurred is minimum. From the cell (i,j) we can go (Up, Down, Right, Left) that is (i,j-1), (i, j+1), (i-1, j), (i+1, j).
+
+Input Format
+
+N = 4 Matrix : 9 4 9 9 6 7 6 4 8 3 3 7 7 4 9 10
+
+The minimum cost is- 9 + 4 + 7 + 3 + 3 + 7 + 10 = 43.
+
+Constraints
+
+1
+
+Output Format
+
+43
+
+Sample Input 0
+
+4
+9 4 9 9
+6 7 6 4
+8 3 3 7
+7 4 9 10
+Sample Output 0
+
+43
+
+
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <bits/stdc++.h>
+using namespace std;
+
+
+
+
+int main() {
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
+   int N;
+    cin >> N;
+    vector<vector<int>> grid(N, vector<int>(N));
+    
+    for (int i = 0; i < N; i++)
+        for (int j = 0; j < N; j++)
+            cin >> grid[i][j];
+    
+    vector<vector<int>> dist(N, vector<int>(N, INT_MAX));
+    dist[0][0] = grid[0][0];
+    
+    queue<pair<int,int>> q;
+    q.push({0,0});
+    
+    int dx[4] = {-1, 1, 0, 0};
+    int dy[4] = {0, 0, -1, 1};
+    
+    while (!q.empty()) {
+        auto [x, y] = q.front();
+        q.pop();
+        
+        for (int k = 0; k < 4; k++) {
+            int nx = x + dx[k];
+            int ny = y + dy[k];
+            
+            if (nx >= 0 && nx < N && ny >= 0 && ny < N) {
+                int newCost = dist[x][y] + grid[nx][ny];
+                if (newCost < dist[nx][ny]) {
+                    dist[nx][ny] = newCost;
+                    q.push({nx, ny});
+                }
+            }
+        }
+    }
+    
+    cout << dist[N-1][N-1] << "\n";
+    return 0;
+}
