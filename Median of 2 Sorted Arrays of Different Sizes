@@ -1,0 +1,99 @@
+Given two sorted arrays a[] and b[], find and return the median of the combined array after merging them into a single sorted array.
+
+Examples:
+
+Input: a[] = [3, 5, 6, 12, 15], b[] = [3, 4, 6, 10, 10, 12]
+Output: 6
+Explanation: The merged array is [3, 3, 4, 5, 6, 6, 10, 10, 12, 12, 15]. So the median of the merged array is 6.
+Input: a[] = [2, 3, 5, 8], b[] = [10, 12, 14, 16, 18, 20]
+Output: 11
+Explanation: The merged array is [2, 3, 5, 8, 10, 12, 14, 16, 18, 20]. So the median of the merged array is (10 + 12) / 2 = 11.
+Input: a[] = [], b[] = [2, 4, 5, 6]
+Output: 4.5
+Explanation: The merged array is [2, 4, 5, 6]. So the median of the merged array is (4 + 5) / 2 = 4.5.
+Constraints: 
+1 ≤ a.size(), b.size() ≤ 106
+1 ≤ a[i], b[i] ≤ 109
+a.size() + b.size() > 0
+
+
+
+/******************************************************************************
+
+                              Online C++ Compiler.
+               Code, Compile, Run and Debug C++ program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <iostream>
+#include<vector>
+#include<algorithm>
+using namespace std;
+int main()
+{
+    int n;
+    cin>>n;
+    int m;
+    cin>>m;
+    vector<int>arr;
+    vector<int>arr1;
+    for(int i=0;i<n;i++){
+        int val;
+        cin>>val;
+        arr.push_back(val);
+    }
+    for(int i=0;i<m;i++){
+        int val1;
+        cin>>val1;
+        arr1.push_back(val1);
+    }
+    vector<int>answer;
+    answer=arr;
+    for(int i=0;i<m;i++){
+        answer.push_back(arr1[i]);
+    }
+    sort(answer.begin(),answer.end());
+    for(int i=0;i<answer.size();i++){
+        cout<<answer[i]<<" ";
+    }
+    cout<<endl;
+    int length=answer.size();
+    if(length%2!=0){
+        int ans=length/2;
+        cout<<answer[ans];
+    }
+    else if(length%2==0){
+        int total=length/2;
+        int total1=answer[total]+answer[total-1];
+        float total2=total1/2.0;
+        cout<<total2;
+    }
+
+    return 0;
+}--------------------------------------------------------------------------------
+class Solution {
+  public:
+    double medianOf2(vector<int>& a, vector<int>& b) {
+        // code here
+        int n=a.size();
+        int m=b.size();
+        vector<int>answer;
+        answer=a;
+        for(int i=0;i<m;i++){
+            answer.push_back(b[i]);
+        }
+        sort(answer.begin(),answer.end());
+        int length=answer.size();
+        if(length%2!=0){
+        int ans=length/2;
+        return answer[ans];
+    }
+    else if(length%2==0){
+        int total=length/2;
+        int total1=answer[total]+answer[total-1];
+        float total2=total1/2.0;
+        return total2;
+       }
+    }
+};
